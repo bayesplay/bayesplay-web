@@ -22,7 +22,8 @@
         "vega": "^5.19.1",
         "vega-lite": "^5.0.0",
         "web-vitals": "^1.0.1",
-        "yup": "^0.32.9"
+        "yup": "^0.32.9",
+        "immer": "^9.0.6"
     },
     "scripts": {
         "start": "react-scripts start",
