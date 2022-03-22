@@ -6,7 +6,7 @@
         "@material-ui/core": "^4.11.3",
         "formik": "^2.2.6",
         "formik-material-ui": "^3.0.1",
-        "immer": "^9.0.12",
+        "immer": "9.0.12",
         "lodash": "^4.17.21",
         "react": "^17.0.1",
         "react-copy-to-clipboard": "^5.0.3",
