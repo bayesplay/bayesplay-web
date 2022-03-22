@@ -10,13 +10,13 @@ R package](https://bayesplay.github.io/bayesplay/) and it powers the
 To build the WASM file simply run:
 
 ```bash
-make
+make main.wasm
 ```
 
 Or to run the tests run:
 
 ```bash
-make tests
+make backend_tests
 ```
 
 A pre-build WASM library is also available in `./dist/main.wasm`
@@ -28,7 +28,7 @@ functionality for computing Bayes factors and statistical distributions,
 respectively. These can be re-used in standalone projects such, for
 example, building other package for statistical computations. The main
 `cmd/bayesplay` module primary serves as a bridge between go/WASM and
-Javascript and is likely to only be useful in the context of the 
+JavaScript and is likely to only be useful in the context of the 
 [bayesplay webapp](https://bayesplay.colling.net.nz).
 
 
