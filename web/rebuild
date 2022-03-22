@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-rm ./yarn.lock
-rm -rf ./node_modules
-yarn install
-yarn build
-yarn test
