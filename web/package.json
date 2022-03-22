@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "immer": "^9.0.6",
+        "svgo": "^2.0.0",
         "@material-ui/core": "^4.11.3",
         "formik": "^2.2.6",
         "formik-material-ui": "^3.0.1",
