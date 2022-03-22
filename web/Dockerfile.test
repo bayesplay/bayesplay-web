@@ -1,0 +1,15 @@
+FROM python:3.10-alpine
+
+# install chromedriver
+RUN apk update
+RUN apk upgrade -U -a
+RUN apk add build-base
+RUN apk add libffi-dev
+RUN pip install --upgrade pip
+RUN pip install selenium
+RUN pip install webdriver-manager
+RUN apk add chromium 
+RUN apk add chromium-chromedriver
+
+
+ENTRYPOINT ["/bin/sh"]

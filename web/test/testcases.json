@@ -1,0 +1,141 @@
+[
+  {
+    "model": {
+      "likelihood": {
+        "family": "normal",
+        "parameters": { "mean": 5.5, "sd": 32.35 }
+      },
+      "alt_prior": {
+        "family": "normal",
+        "parameters": { "mean": 0, "sd": 13.3, "range": ["0", "Inf"] }
+      },
+      "null_prior": { "family": "point", "parameters": { "point": 0 } }
+    },
+    "bf": 0.9745934
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "normal",
+        "parameters": { "mean": 5.5, "sd": 10 }
+      },
+      "alt_prior": {
+        "family": "uniform",
+        "parameters": { "min": 0, "max": 20, "range": ["Inf", "Inf"] }
+      },
+      "null_prior": { "family": "point", "parameters": { "point": 0 } }
+    },
+    "bf": 0.9257394
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "noncentral_d",
+        "parameters": { "d": 0.22696089971622863, "n": 80 }
+      },
+      "alt_prior": {
+        "family": "cauchy",
+        "parameters": { "location": 0, "scale": 1, "range": ["Inf", "Inf"] }
+      },
+      "null_prior": { "family": "point", "parameters": { "point": 0 } }
+    },
+    "bf": 0.6420765
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "noncentral_t",
+        "parameters": { "t": 2.03, "df": 79 }
+      },
+      "alt_prior": {
+        "family": "cauchy",
+        "parameters": {
+          "location": 0,
+          "scale": 8.94427190999916,
+          "range": ["Inf", "Inf"]
+        }
+      },
+      "null_prior": { "family": "point", "parameters": { "point": 0 } }
+    },
+    "bf": 0.6420765
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "noncentral_d2",
+        "parameters": { "d": -0.644, "n1": 20, "n2": 25 }
+      },
+      "alt_prior": {
+        "family": "cauchy",
+        "parameters": { "location": 0, "scale": 1, "range": ["Inf", "Inf"] }
+      },
+      "null_prior": { "family": "point", "parameters": { "point": 0 } }
+    },
+    "bf": 1.5839518
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "binomial",
+        "parameters": { "successes": 2, "trials": 10 }
+      },
+      "alt_prior": {
+        "family": "beta",
+        "parameters": { "alpha": 0.5, "beta": 0.5 }
+      },
+      "null_prior": { "family": "point", "parameters": { "point": 0.5 } }
+    },
+    "bf": 1.6757813
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "normal",
+        "parameters": { "mean": 5, "sd": 30 }
+      },
+      "alt_prior": {
+        "family": "normal",
+        "parameters": { "mean": 0, "sd": 13 }
+      },
+      "null_prior": {
+        "family": "uniform",
+        "parameters": { "min": 0, "max": 1 }
+      }
+    },
+    "bf": 0.9170362
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "student_t",
+        "parameters": { "mean": 5, "sd": 30, "df": 70 }
+      },
+      "alt_prior": {
+        "family": "normal",
+        "parameters": { "mean": 0, "sd": 13 }
+      },
+      "null_prior": {
+        "family": "uniform",
+        "parameters": { "min": 0, "max": 2 }
+      }
+    },
+    "bf": 0.9143271
+  },
+  {
+    "model": {
+      "likelihood": {
+        "family": "student_t",
+        "parameters": { "mean": 5, "sd": 30, "df": 70 }
+      },
+      "alt_prior": {
+        "family": "normal",
+        "parameters": { "mean": 0, "sd": 13 }
+      },
+      "null_prior": {
+        "family": "normal",
+        "parameters": { "mean": 0, "sd": 0.2, "range": [0, "Inf"] }
+      }
+    },
+    "bf": 0.918091
+  }
+]

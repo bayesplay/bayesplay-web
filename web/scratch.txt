@@ -1,0 +1,2 @@
+    "test": "docker-compose build app && docker-compose run test && cd test && R -e 'source(\"runtestcases.R\")'",
+
