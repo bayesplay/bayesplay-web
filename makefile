@@ -2,6 +2,8 @@ web_source := $(shell  find web/src)
 ./web/build/index.js: $(web_source)
 	@echo "Building web"
 	@cd web; \
+		yarn install
+	@cd web; \
 		yarn build
 
 .PHONY: web_tests
