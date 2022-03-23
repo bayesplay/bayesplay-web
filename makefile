@@ -34,8 +34,8 @@ backend_tests :
 
 dist : main.wasm
 	echo `pwd`
-	cp lib/dist/main.wasm ./web/public/main.wasm	
-	cp ./lib/dist/tinygo.js ./web/public/wasm_exec.js
+	# cp lib/dist/main.wasm ./web/public/main.wasm	
+	# cp ./lib/dist/tinygo.js ./web/public/wasm_exec.js
 
 tests : backend_tests web_tests
 
