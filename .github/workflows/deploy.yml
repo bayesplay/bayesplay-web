@@ -15,4 +15,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - run: make web_tests
+      - uses: acifani/setup-tinygo@v1
+        with:
+          tinygo-version: 0.22.0
+      - run: | 
+          make dist
+          cd web
+          yarn install
+          yarn build
+
