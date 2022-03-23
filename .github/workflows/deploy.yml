@@ -23,4 +23,9 @@ jobs:
           cd web
           yarn install
           yarn build
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: './web/build'
+          new_branch: build
+
 
