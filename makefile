@@ -37,3 +37,10 @@ dist : main.wasm
 
 tests : backend_tests web_tests
 
+web : dist 
+	@echo "Building web"
+	@cd web; \
+		yarn install
+	@cd web; \
+		yarn build
+
