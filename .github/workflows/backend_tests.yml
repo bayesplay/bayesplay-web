@@ -1,4 +1,4 @@
-name: backend
+name: tests
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
             ./web/public/main.wasm
             ./web/public/wasm_exec.js
           key: wasm_build
-  build-web:
+  test-web:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -40,9 +40,25 @@ jobs:
             ./web/public/main.wasm
             ./web/public/wasm_exec.js
           key: wasm_build
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ./web/build/**/*
+          key: web
       - uses: actions/setup-node@v2
         with:
           node-version: 14
       - run: make web_tests
-      # - uses: EndBug/add-and-commit@v9
+  deploy-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ./web/build/**/*
+          key: web
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: 'web'
+          new_branch: build
 
