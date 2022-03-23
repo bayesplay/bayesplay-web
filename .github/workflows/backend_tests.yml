@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  test:
+  test-lib:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
         with:
          go-version: '^1.17'
       - run: make backend_tests
-  build:
+  build-wasm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,4 +24,28 @@ jobs:
         with:
           tinygo-version: 0.22.0
       - run: make dist
-      - uses: EndBug/add-and-commit@v9
+      - uses: actions/upload-artifact@v2
+        with:
+          name: wasm
+          path: ./web/public/main.wasm
+      - uses: actions/upload-artifact@v2
+        with:
+          name: js-bridge
+          path: ./web/public/wasm_exec.js
+
+  build-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - uses: actions/download-artifact@v2
+        with: 
+          name: wasm
+      - uses: actions/download-artifact@v2
+        with: 
+          name: js-bridge
+      - run: make web_tests
+
+      # - uses: EndBug/add-and-commit@v9
