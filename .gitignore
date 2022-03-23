@@ -38,6 +38,3 @@ TODO
 test/chromedriver
 test/test_outcomes
 
-# ignore these because they're built on CI
-wasm_exec.js
-main.wasm
