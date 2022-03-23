@@ -1,4 +1,4 @@
-name: web
+name: deploy-site
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
       - uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: build # The branch the action should deploy to.
-          FOLDER: web/build # The folder the action should deploy.
+          BRANCH: build
+          FOLDER: web/build 
 
 
