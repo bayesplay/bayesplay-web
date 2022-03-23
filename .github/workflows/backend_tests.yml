@@ -24,15 +24,11 @@ jobs:
         with:
           tinygo-version: 0.22.0
       - run: make dist
-      - uses: actions/upload-artifact@v2
+      - uses: actions/cache@v2
         with:
-          name: wasm
-          path: ./web/public/main.wasm
-      - uses: actions/upload-artifact@v2
-        with:
-          name: js-bridge
-          path: ./web/public/wasm_exec.js
-
+          path: |
+            ./web/public/main.wasm
+            ./web/public/wasm_exec.js
   build-web:
     runs-on: ubuntu-latest
     steps:
@@ -40,12 +36,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - uses: actions/download-artifact@v2
-        with: 
-          name: wasm
-      - uses: actions/download-artifact@v2
-        with: 
-          name: js-bridge
       - run: make web_tests
       # - uses: EndBug/add-and-commit@v9
 
