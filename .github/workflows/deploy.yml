@@ -23,9 +23,10 @@ jobs:
           cd web
           yarn install
           yarn build
-      - uses: EndBug/add-and-commit@v9
+      - uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          add: ./web/build --force
-          new_branch: build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: build # The branch the action should deploy to.
+          FOLDER: web/build # The folder the action should deploy.
 
 
