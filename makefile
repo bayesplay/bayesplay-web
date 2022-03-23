@@ -33,7 +33,8 @@ backend_tests :
 	@echo "Finished Tests!"
 
 dist : main.wasm
-	cp ./lib/dist/main.wasm ./web/public/main.wasm	
+	echo `pwd`
+	cp lib/dist/main.wasm ./web/public/main.wasm	
 	cp ./lib/dist/tinygo.js ./web/public/wasm_exec.js
 
 tests : backend_tests web_tests
