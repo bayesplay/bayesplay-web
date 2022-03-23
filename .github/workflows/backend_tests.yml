@@ -29,10 +29,15 @@ jobs:
           path: |
             ./web/public/main.wasm
             ./web/public/wasm_exec.js
+          key: wasm_build
   build-web:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          path: |
+            ./web/public/main.wasm
+            ./web/public/wasm_exec.js
       - uses: actions/setup-node@v2
         with:
           node-version: 14
