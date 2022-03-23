@@ -53,13 +53,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: acifani/setup-tinygo@v1
         with:
-          path: |
-            ./web/build/**/*
-          key: web
+          tinygo-version: 0.22.0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: |
+          make dist
+          make ./web/build/index.js:
       - uses: EndBug/add-and-commit@v9
         with:
-          add: 'web'
+          add: './web/build'
           new_branch: build
 

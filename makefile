@@ -13,7 +13,6 @@ web_tests: ./web/build/index.js
 	@cd web;\
 		yarn test
 
-
 main.wasm :
 	cd lib/cmd/bayesplay; \
 		tinygo build -o ../../dist/main.wasm -target=wasm -opt=z -gc=leaking -no-debug main.go
