@@ -9,7 +9,7 @@ export function About() {
         <Grid item>
           <Paper square style={{ padding: 15 }}>
             <Typography variant="subtitle2" style={{ lineHeight: "200%" }}>
-              About this page
+              About Bayesplay
             </Typography>
             <Typography variant="body1" style={{ lineHeight: "150%" }}>
               This website is designed as a companion to the{" "}
@@ -34,13 +34,10 @@ export function About() {
               .
             </Typography>
 
+          </Paper>
+          <Paper square style={{ padding: 15 }} spacing={2}>
             <Typography variant="body1" style={{ lineHeight: "150%" }}>
-              To learn more about how the computations on this website are
-              performed, checkout the{" "}
-              <a href="https://github.com/ljcolling/go-bayesfactor">
-                go-bayesfactor
-              </a>{" "}
-              package.
+              If you'd like to contribute to this web-app or the companion <code>R</code> package then visit the repository on GitHub at <a href="https://github.com/bayesplay/bayesplay-web">bayesplay/bayesplay-web</a> for the source of the web-app or <a href="https://github.com/bayesplay/bayesplay">bayesplay/bayesplay</a> for the <code>R</code> pacakage.
             </Typography>
           </Paper>
           <Paper square style={{ padding: 15 }} spacing={2}>
@@ -51,6 +48,12 @@ export function About() {
               A companion tutorial paper for the <code>bayesplay</code>{" "}
               <code>R</code> package and this website will be available shortly.
               Stay tuned for details.
+            </Typography>
+          </Paper>
+          <Paper square style={{ padding: 15 }} spacing={2}>
+            <Typography variant="body1" style={{ lineHeight: "150%" }}>
+            Alternatively you can work through my Bayesian Statistics mini-module from the University of Sussex. 
+              The online coursebook for this mini-module is available at <a href="https://bayescourse.netlify.app/">bayescourse.netlify.app</a>.
             </Typography>
           </Paper>
           <Paper square style={{ padding: 15 }} spacing={2}>
@@ -96,9 +99,6 @@ export function About() {
         </Grid>
       </Grid>
 
-      <Grid style={{ padding: 20, display: "flex", justifyContent: "center" }}>
-        &copy; 2021 Lincoln Colling
-      </Grid>
     </React.Fragment>
   );
 }

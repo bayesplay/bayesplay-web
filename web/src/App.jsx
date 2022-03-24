@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
-import { Container, Typography, AppBar, Toolbar } from "@material-ui/core";
+import { Container, Typography, AppBar, Toolbar, Grid} from "@material-ui/core";
 import styled from "styled-components";
 
 import { Calculate } from "./Pages/Calculator.jsx";
@@ -50,6 +50,11 @@ function Layout(props) {
         </div>
         <div className="content">{props.children}</div>
       </Container>
+      <Grid
+        style={{ padding: 20, display: "flex", justifyContent: "center" }}
+      >
+        &copy; 2022 Lincoln Colling
+      </Grid>
     </React.Fragment>
   );
 }

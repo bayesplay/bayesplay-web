@@ -158,11 +158,6 @@ export function Calculate() {
               />
             </Grid>
           </ModelContext.Provider>
-          <Grid
-            style={{ padding: 20, display: "flex", justifyContent: "center" }}
-          >
-            &copy; 2021 Lincoln Colling
-          </Grid>
           {false && (
             <>
               <div>DEBUGGING</div>
