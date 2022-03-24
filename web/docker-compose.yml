@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      dockerfile: Dockerfile.build
+      context: .
+    container_name: app
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    networks:
+      frontend:
+        ipv4_address: 172.20.0.6
+  test:
+    build:
+      dockerfile: Dockerfile.test
+      context: .
+    container_name: testing
+    image: testing
+    depends_on: 
+      - app
+    networks:
+      frontend:
+        ipv4_address: 172.20.0.5
+    links:
+      - app
+    volumes:
+      - ./test/:/home/
+    working_dir: /home
+    command: runtests.sh
+
+networks:
+  frontend:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24

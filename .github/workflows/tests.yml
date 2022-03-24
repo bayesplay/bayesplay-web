@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  test-lib:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+         go-version: '^1.17'
+      - run: make backend_tests
+  build-wasm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: acifani/setup-tinygo@v1
+        with:
+          tinygo-version: 0.22.0
+      - run: make dist
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ./web/public/main.wasm
+            ./web/public/wasm_exec.js
+          key: wasm_build
+  test-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ./web/public/main.wasm
+            ./web/public/wasm_exec.js
+          key: wasm_build
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ./web/build/**/*
+          key: web
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: make web_tests
